@@ -36,12 +36,13 @@
       constructor(props) {
         super(props)
         this.state = {
-          center: { lat: 5.6219868, lng: -0.23223 },
+          center: { lat:-22.91863167496778, lng:-47.1219448635392 },
           locations: {},
           users_online: [],
           current_user: ''
         }
       }
+      
       
 
       componentDidMount() {
@@ -95,13 +96,13 @@
             <GoogleMap
               style={mapStyles}
               bootstrapURLKeys={{ key: 'AIzaSyAhZlf9fcGxTFa6YKRghtLhI_pawBBM8aY' }}
-              center={{ lat: 5.6219868, lng: -0.1733074 }}
+              center={{ lat:-22.91863167496778, lng:-47.1219448635392 }}
               zoom={14}
             >
               <Marker
               title={'Localização atual'}
-              lat={5.6219868}
-              lng={-0.1733074}
+              lat={-22.91863167496778}
+              lng={-47.1219448635392}
             >
               </Marker>
             </GoogleMap>
