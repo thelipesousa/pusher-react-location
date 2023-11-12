@@ -9,13 +9,13 @@
 
     
     const mapStyles = {
-      width: '100%',
-      height: '100%'
+      width: '50%',
+      height: '50%'
     }
     
     const markerStyle = {
-      height: '50px',
-      width: '50px',
+      height: '40px',
+      width: '40px',
       marginTop: '-50px'
     }
     
@@ -85,8 +85,11 @@
             this.notify();
           })
         }
-        
-      
+
+
+        getLocation() {
+
+        }
     }
 
     class Mapa extends Component{
