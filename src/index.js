@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {
+    Pusher,
+    PusherMember,
+    PusherChannel,
+    PusherEvent,
+} from '@pusher/pusher-websocket-react-native';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const pusher = Pusher.getInstance();
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+await pusher.init({
+    apiKey: "168aba3dfd9f19ba806d",
+    cluster: "sa1"
+});
+
+await pusher.connect();
+
+const channel: PusherChannel = pusher.subscribe({
+    channelName: "react-location",
+});
+
+channel.bind('your_event_name', (event: PusherEvent, member: PusherMember) => {
+    console.log(`Event received: ${event}, Member Info: ${JSON.stringify(member)}`);
+});
