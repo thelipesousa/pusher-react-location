@@ -1,9 +1,9 @@
     // src/App.js
     import React, { Component } from 'react';
     import GoogleMap from 'google-map-react';
-    import axios, {defaults} from 'axios';
+    import axios from 'axios';
     import Pusher from 'pusher-js';
-    import { ToastContainer, toast } from 'react-toastify';
+    import { toast } from 'react-toastify';
     import 'react-toastify/dist/ReactToastify.css';
     import '@pusher/pusher-websocket-react-native'
 
